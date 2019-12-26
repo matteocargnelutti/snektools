@@ -1,0 +1,33 @@
+backend:
+  name: git-gateway
+  branch: master
+media_folder: "assets/uploads"
+public_folder: "assets/uploads"
+collections:
+  # Shared data
+  - name: "data"
+    label: "Shared Data"
+    folder: "data/"
+    create: true
+    slug: "{{fields.title}}"
+    extension: ".json"
+    format: "json"
+    editor:
+      preview: false
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Github URL", name: "github_url", widget: "string"}
+  # Basic pages
+  - name: "pages"
+    label: "Pages"
+    folder: "content/"
+    create: true
+    slug: "{{fields.title}}"
+    extension: ".json.md"
+    format: "json-frontmatter"
+    editor:
+      preview: false
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "template", name: "layout", widget: "string", default: "index.html"}  # Used to set the layout to pages/generic automatically
+      - {label: "Body", name: "body", widget: "markdown"}

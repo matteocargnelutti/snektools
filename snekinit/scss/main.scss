@@ -1,0 +1,44 @@
+* {
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+}
+
+html {
+  font-size: 20px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+  border-top: 0.5rem solid #42f05e;
+
+  // Logo
+  h1 {
+    text-align: center;
+    img {
+      width: 16rem;
+    }
+  }
+
+  // Content
+  > div {
+    text-align: center;
+    margin-bottom: 1rem;
+
+    h2 {
+      margin-bottom: 1rem;
+    }
+
+  }
+
+  // Footer
+  > footer {
+    text-align: center;
+
+    a {
+      color: #003d0a;
+    }
+
+  }
+
+}
