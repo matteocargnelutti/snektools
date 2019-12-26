@@ -1,7 +1,7 @@
 # snektools
 ![snek's logo](https://raw.githubusercontent.com/matteocargnelutti/snek/master/misc/snek-banner-tmp-1750x.png "snektools")
 
-Collection of tools for [Snek - A dead-simple static-site generator for Python](https://github.com/matteocargnelutti/snek).
+Collection of tools for [Snek - A simple and minimalistic static-site generator for Python](https://github.com/matteocargnelutti/snek).
 
 ---
 
