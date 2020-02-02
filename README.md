@@ -13,7 +13,7 @@ Collection of tools for [Snek - A simple and minimalistic static-site generator 
 
 ---
 
-## Installing or updating the `snektools`
+## Installing the `snektools`
 
 **You will need the following on your machine:**
 - An UNIX-like OS _(Linux, MacOS, etc ...)_
