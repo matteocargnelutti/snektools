@@ -3,7 +3,7 @@
 # See: https://github.com/matteocargnelutti/snek
 # 2019-2020 Matteo Cargnelutti (matteo.cargnelutti@gmail.com)
 #
-# snekserve.sh: Builds and serves the website locally in live-reload mode
+# snekserve.sh: Builds and serves the website locally over HTTP, in live-reload mode.
 #-------------------------------------------------------------------------------
 # Intro
 echo "🐍 [snekserve] - Starting ...";
@@ -16,4 +16,4 @@ for i in range(0, 10):
     server.watch(path, 'python website.py', ignore=lambda path: './build/' in path)
 
 server.serve(root='./build', port=8081)
-END # Code is embeded here for consistency purposes.
+END # Code is embeded here for consistency purposes with other snektools.
