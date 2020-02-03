@@ -7,6 +7,11 @@
 #-------------------------------------------------------------------------------
 # Intro
 echo "🐍 [snekserve] - Starting ...";
+
+# Build the website once to make sure the build folder exists
+pipenv run python website.py;
+
+# Launch live-reload
 pipenv run python << END
 from livereload import Server, shell
 server = Server()
