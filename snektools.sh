@@ -16,6 +16,7 @@ chmod a+x snekinit.sh;
 
 # snerkserve.sh
 echo "🐍 [snekserve] - Installing snekserve in current folder.";
+pipenv install livereload
 curl https://raw.githubusercontent.com/matteocargnelutti/snektools/master/snekserve.sh > snekserve.sh;
 chmod a+x snekserve.sh;
 

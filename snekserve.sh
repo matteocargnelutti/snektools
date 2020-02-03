@@ -3,27 +3,17 @@
 # See: https://github.com/matteocargnelutti/snek
 # 2019-2020 Matteo Cargnelutti (matteo.cargnelutti@gmail.com)
 #
-# snekserve.sh: Minimalistic HTTP server for Snek's build folder + rebuild loop.
+# snekserve.sh: Builds and serves the website locally over HTTP, in live-reload mode.
 #-------------------------------------------------------------------------------
-# Will catch ctrl+c and kill all background processes of this script
-trap "kill 0" EXIT;
-
 # Intro
 echo "🐍 [snekserve] - Starting ...";
+pipenv run python << END
+from livereload import Server, shell
+server = Server()
 
-# Will rebuild website every 5 seconds
-first_build_done=false
-while true; 
-do 
-    pipenv run python website.py;
+for i in range(0, 10):
+    path = '.' + i * '/**'
+    server.watch(path, 'python website.py', ignore=lambda path: './build/' in path)
 
-    if [ $first_build_done == true ] # Prevents a 5second wait on first cycle
-    then
-        sleep 5
-    fi
-
-    first_build_done=true
-done &
-
-# Will serve content of ./build over HTTP 8081
-pipenv run python -m http.server 8081 --directory ./build
+server.serve(root='./build', port=8081)
+END # Code is embeded here for consistency purposes with other snektools.
