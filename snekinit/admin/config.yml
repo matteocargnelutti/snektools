@@ -29,5 +29,5 @@ collections:
       preview: false
     fields:
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "template", name: "layout", widget: "string", default: "index.html"}  # Used to set the layout to pages/generic automatically
+      - {label: "template", name: "template", widget: "string", default: "index.html"}  # Used to set the layout to pages/generic automatically
       - {label: "Body", name: "body", widget: "markdown"}
